@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="cordova-plugin-progress-dialog"
+        version="0.1.0">
+
+    <name>Progress Dialog</name>
+    <description>Simple Cordova Plugin to display a native progress dialog</description>
+    <author>Nahuel Beni</author>
+    <license>MIT</license>
+    <keywords>cordova,progress,dialog,loading,load,activity,indicator,alert,ring,bar</keywords>
+    <repo>https://github.com/nbeni/cordova-plugin-progress-dialog.git</repo>
+    <issue>https://github.com/nbeni/cordova-plugin-progress-dialog/issues</issue>
+
+    <js-module src="www/progressDialog.js" name="ProgressDialog">
+        <clobbers target="ProgressDialog" />
+    </js-module>
+    
+    <!-- Android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="ProgressDialog" >
+                <param name="android-package" value="ar.com.beni.cordova.plugin.ProgressDialogPlugin"/>
+            </feature>
+        </config-file>
+        <source-file src="src/android/ProgressDialogPlugin.java" target-dir="src/ar/com/beni/cordova/plugin" />
+    </platform>
+</plugin>
